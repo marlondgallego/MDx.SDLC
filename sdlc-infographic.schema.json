@@ -1,0 +1,340 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://abbott.local/schemas/sdlc-infographic.schema.json",
+  "title": "Abbott Software Development Lifecycle Infographic",
+  "description": "Content model for the Abbott SDLC infographic, designed for native iOS consumption via Codable.",
+  "type": "object",
+  "required": ["schemaVersion", "locale", "document", "teams", "sections"],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "locale": {
+      "type": "string"
+    },
+    "document": {
+      "$ref": "#/$defs/Document"
+    },
+    "teams": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/Team" },
+      "minItems": 1
+    },
+    "sections": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/Section" },
+      "minItems": 1
+    },
+    "relationships": {
+      "$ref": "#/$defs/Relationships"
+    }
+  },
+  "$defs": {
+    "Document": {
+      "type": "object",
+      "required": ["id", "brand", "title", "subtitle"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "brand": { "$ref": "#/$defs/Brand" },
+        "title": { "type": "string" },
+        "subtitle": { "type": "string" }
+      }
+    },
+    "Brand": {
+      "type": "object",
+      "required": ["name", "logoAsset"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string" },
+        "logoAsset": { "type": "string" }
+      }
+    },
+    "Team": {
+      "type": "object",
+      "required": ["id", "name", "iconAsset", "description"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+        "name": { "type": "string" },
+        "iconAsset": { "type": "string" },
+        "sfSymbol": { "type": "string" },
+        "description": { "type": "string" }
+      }
+    },
+    "IconItem": {
+      "type": "object",
+      "required": ["id", "title", "description", "iconAsset"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "iconAsset": { "type": "string" },
+        "sfSymbol": { "type": "string" }
+      }
+    },
+    "BenefitItem": {
+      "type": "object",
+      "required": ["id", "text", "iconAsset"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "text": { "type": "string" },
+        "iconAsset": { "type": "string" },
+        "sfSymbol": { "type": "string" }
+      }
+    },
+    "LifecycleStage": {
+      "type": "object",
+      "required": ["id", "sequence", "name", "description", "teamIds"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "enum": ["plan", "build", "check", "confirm", "deliver"] },
+        "sequence": { "type": "integer", "minimum": 1, "maximum": 5 },
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "illustrationAsset": { "type": "string" },
+        "teamIds": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        }
+      }
+    },
+    "Product": {
+      "type": "object",
+      "required": ["id", "name", "description", "imageAsset"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "tagline": { "type": ["string", "null"] },
+        "description": { "type": "string" },
+        "imageAsset": { "type": "string" },
+        "dashboardPreview": {
+          "type": "object",
+          "required": ["hasCharts", "chartTypes"],
+          "additionalProperties": false,
+          "properties": {
+            "hasCharts": { "type": "boolean" },
+            "chartTypes": {
+              "type": "array",
+              "items": { "type": "string", "enum": ["gauge", "lineChart", "barChart", "pieChart"] }
+            },
+            "description": { "type": "string" }
+          }
+        }
+      }
+    },
+    "Pillar": {
+      "type": "object",
+      "required": ["id", "title", "iconAsset"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "iconAsset": { "type": "string" },
+        "sfSymbol": { "type": "string" }
+      }
+    },
+    "Layout": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "columns": { "type": "integer", "minimum": 1 },
+        "style": { "type": "string" }
+      }
+    },
+    "SectionBase": {
+      "type": "object",
+      "required": ["id", "type", "displayOrder", "title"],
+      "properties": {
+        "id": { "type": "string" },
+        "type": {
+          "type": "string",
+          "enum": [
+            "featureGrid",
+            "principlesRow",
+            "lifecycleWheel",
+            "teamDirectory",
+            "benefitList",
+            "productShowcase",
+            "cybersecurityFooter"
+          ]
+        },
+        "displayOrder": { "type": "integer", "minimum": 1 },
+        "title": { "type": "string" },
+        "layout": { "$ref": "#/$defs/Layout" }
+      }
+    },
+    "FeatureGridSection": {
+      "allOf": [
+        { "$ref": "#/$defs/SectionBase" },
+        {
+          "type": "object",
+          "required": ["leadIn", "footer", "items"],
+          "properties": {
+            "type": { "const": "featureGrid" },
+            "leadIn": { "type": "string" },
+            "footer": { "type": "string" },
+            "items": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/IconItem" }
+            }
+          }
+        }
+      ]
+    },
+    "PrinciplesRowSection": {
+      "allOf": [
+        { "$ref": "#/$defs/SectionBase" },
+        {
+          "type": "object",
+          "required": ["items"],
+          "properties": {
+            "type": { "const": "principlesRow" },
+            "items": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/IconItem" }
+            }
+          }
+        }
+      ]
+    },
+    "LifecycleWheelSection": {
+      "allOf": [
+        { "$ref": "#/$defs/SectionBase" },
+        {
+          "type": "object",
+          "required": ["chart", "stages"],
+          "properties": {
+            "type": { "const": "lifecycleWheel" },
+            "chart": {
+              "type": "object",
+              "required": ["kind", "centerLabel", "direction", "stageCount"],
+              "properties": {
+                "kind": { "const": "circularFlow" },
+                "centerLabel": { "type": "string" },
+                "direction": { "enum": ["clockwise", "counterclockwise"] },
+                "stageCount": { "const": 5 }
+              }
+            },
+            "stages": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/LifecycleStage" },
+              "minItems": 5,
+              "maxItems": 5
+            }
+          }
+        }
+      ]
+    },
+    "TeamDirectorySection": {
+      "allOf": [
+        { "$ref": "#/$defs/SectionBase" },
+        {
+          "type": "object",
+          "required": ["teamIds"],
+          "properties": {
+            "type": { "const": "teamDirectory" },
+            "teamIds": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          }
+        }
+      ]
+    },
+    "BenefitListSection": {
+      "allOf": [
+        { "$ref": "#/$defs/SectionBase" },
+        {
+          "type": "object",
+          "required": ["items"],
+          "properties": {
+            "type": { "const": "benefitList" },
+            "items": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/BenefitItem" }
+            }
+          }
+        }
+      ]
+    },
+    "ProductShowcaseSection": {
+      "allOf": [
+        { "$ref": "#/$defs/SectionBase" },
+        {
+          "type": "object",
+          "required": ["products"],
+          "properties": {
+            "type": { "const": "productShowcase" },
+            "products": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/Product" }
+            }
+          }
+        }
+      ]
+    },
+    "CybersecurityFooterSection": {
+      "allOf": [
+        { "$ref": "#/$defs/SectionBase" },
+        {
+          "type": "object",
+          "required": ["statement", "pillars"],
+          "properties": {
+            "type": { "const": "cybersecurityFooter" },
+            "statement": { "type": "string" },
+            "pillars": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/Pillar" }
+            }
+          }
+        }
+      ]
+    },
+    "Section": {
+      "oneOf": [
+        { "$ref": "#/$defs/FeatureGridSection" },
+        { "$ref": "#/$defs/PrinciplesRowSection" },
+        { "$ref": "#/$defs/LifecycleWheelSection" },
+        { "$ref": "#/$defs/TeamDirectorySection" },
+        { "$ref": "#/$defs/BenefitListSection" },
+        { "$ref": "#/$defs/ProductShowcaseSection" },
+        { "$ref": "#/$defs/CybersecurityFooterSection" }
+      ]
+    },
+    "Relationships": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "teamParticipationByStage": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "teamsNotInLifecycleWheel": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "teamsInAllPostBuildStages": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "teamsInMostStages": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      }
+    }
+  }
+}

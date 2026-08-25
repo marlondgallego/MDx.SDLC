@@ -1,0 +1,462 @@
+{
+  "schemaVersion": "1.0.0",
+  "locale": "en-US",
+  "document": {
+    "id": "software-development-lifecycle",
+    "brand": {
+      "name": "Abbott",
+      "logoAsset": "abbott-logo"
+    },
+    "title": "SOFTWARE DEVELOPMENT LIFECYCLE",
+    "subtitle": "How we build and deliver reliable software that powers life-changing diagnostics"
+  },
+  "teams": [
+    {
+      "id": "product-management",
+      "name": "Product Management",
+      "iconAsset": "icon-product-management",
+      "sfSymbol": "person.3.fill",
+      "description": "Understands your needs and defines what we should build."
+    },
+    {
+      "id": "marketing",
+      "name": "Marketing",
+      "iconAsset": "icon-marketing",
+      "sfSymbol": "megaphone.fill",
+      "description": "Shares insights and ensures our solutions bring real value."
+    },
+    {
+      "id": "systems-engineering",
+      "name": "Systems Engineering",
+      "iconAsset": "icon-systems-engineering",
+      "sfSymbol": "gearshape.2.fill",
+      "description": "Designs the overall system and ensures everything works together."
+    },
+    {
+      "id": "software-engineering",
+      "name": "Software Engineering",
+      "iconAsset": "icon-software-engineering",
+      "sfSymbol": "chevron.left.forwardslash.chevron.right",
+      "description": "Writes and builds the software."
+    },
+    {
+      "id": "assay-team",
+      "name": "Assay Team",
+      "iconAsset": "icon-assay-team",
+      "sfSymbol": "flask.fill",
+      "description": "Provides scientific and assay expertise to ensure accuracy and performance."
+    },
+    {
+      "id": "quality-assurance",
+      "name": "Quality Assurance (QA)",
+      "iconAsset": "icon-quality-assurance",
+      "sfSymbol": "checkmark.shield.fill",
+      "description": "Tests the software to ensure it is safe, reliable and easy to use."
+    },
+    {
+      "id": "regulatory-affairs",
+      "name": "Regulatory Affairs",
+      "iconAsset": "icon-regulatory-affairs",
+      "sfSymbol": "checklist",
+      "description": "Ensures we meet all required regulatory standards."
+    },
+    {
+      "id": "clinical-medical-affairs",
+      "name": "Clinical / Medical Affairs",
+      "iconAsset": "icon-clinical-medical-affairs",
+      "sfSymbol": "heart.text.square.fill",
+      "description": "Provides clinical input and ensures the right outcomes."
+    },
+    {
+      "id": "cybersecurity",
+      "name": "Cybersecurity",
+      "iconAsset": "icon-cybersecurity",
+      "sfSymbol": "lock.shield.fill",
+      "description": "Protects data and systems every step of the way."
+    },
+    {
+      "id": "devops",
+      "name": "DevOps",
+      "iconAsset": "icon-devops",
+      "sfSymbol": "infinity",
+      "description": "Ensures smooth, secure delivery and ongoing improvements."
+    },
+    {
+      "id": "manufacturing-operations",
+      "name": "Manufacturing Operations",
+      "iconAsset": "icon-manufacturing-operations",
+      "sfSymbol": "building.2.fill",
+      "description": "Prepares for production and ensures reliable delivery."
+    },
+    {
+      "id": "customer-support",
+      "name": "Customer Support",
+      "iconAsset": "icon-customer-support",
+      "sfSymbol": "headphones",
+      "description": "Provides training, support and feedback to keep improving."
+    }
+  ],
+  "sections": [
+    {
+      "id": "our-goal",
+      "type": "featureGrid",
+      "displayOrder": 1,
+      "title": "OUR GOAL",
+      "leadIn": "We build software that is:",
+      "footer": "All so you can deliver the best care to your patients and communities.",
+      "layout": {
+        "columns": 3,
+        "style": "iconCard"
+      },
+      "items": [
+        {
+          "id": "safe-secure",
+          "title": "SAFE & SECURE",
+          "description": "Protects patient and customer data.",
+          "iconAsset": "icon-shield",
+          "sfSymbol": "shield.fill"
+        },
+        {
+          "id": "reliable",
+          "title": "RELIABLE",
+          "description": "Works accurately every time.",
+          "iconAsset": "icon-medal",
+          "sfSymbol": "medal.fill"
+        },
+        {
+          "id": "made-for-you",
+          "title": "MADE FOR YOU",
+          "description": "Meets your needs and expectations.",
+          "iconAsset": "icon-people",
+          "sfSymbol": "person.2.fill"
+        },
+        {
+          "id": "innovative",
+          "title": "INNOVATIVE",
+          "description": "Continuously improving.",
+          "iconAsset": "icon-rocket",
+          "sfSymbol": "paperplane.fill"
+        },
+        {
+          "id": "collaborative",
+          "title": "COLLABORATIVE",
+          "description": "Built by teams working together.",
+          "iconAsset": "icon-handshake",
+          "sfSymbol": "hand.raised.fill"
+        },
+        {
+          "id": "compliant",
+          "title": "COMPLIANT",
+          "description": "Follows all quality and regulatory standards.",
+          "iconAsset": "icon-compliant",
+          "sfSymbol": "globe.americas.fill"
+        }
+      ]
+    },
+    {
+      "id": "how-we-build",
+      "type": "principlesRow",
+      "displayOrder": 2,
+      "title": "HOW WE BUILD GREAT SOFTWARE",
+      "layout": {
+        "columns": 5,
+        "style": "horizontalIconStrip"
+      },
+      "items": [
+        {
+          "id": "step-by-step",
+          "title": "STEP BY STEP",
+          "description": "We break work into small, manageable steps and build incrementally.",
+          "iconAsset": "icon-target",
+          "sfSymbol": "target"
+        },
+        {
+          "id": "continuous-improvement",
+          "title": "CONTINUOUS IMPROVEMENT",
+          "description": "We learn, improve and refine with each cycle.",
+          "iconAsset": "icon-cycle",
+          "sfSymbol": "arrow.triangle.2.circlepath"
+        },
+        {
+          "id": "built-to-solve-real-needs",
+          "title": "BUILT TO SOLVE REAL NEEDS",
+          "description": "We focus on solving real problems that matter most.",
+          "iconAsset": "icon-people-group",
+          "sfSymbol": "person.3.fill"
+        },
+        {
+          "id": "quality-at-every-step",
+          "title": "QUALITY AT EVERY STEP",
+          "description": "We test early and often to ensure high quality.",
+          "iconAsset": "icon-clipboard",
+          "sfSymbol": "list.clipboard.fill"
+        },
+        {
+          "id": "ready-for-change",
+          "title": "READY FOR CHANGE",
+          "description": "We adapt quickly to new needs and opportunities.",
+          "iconAsset": "icon-chart-up",
+          "sfSymbol": "chart.line.uptrend.xyaxis"
+        }
+      ]
+    },
+    {
+      "id": "lifecycle-process",
+      "type": "lifecycleWheel",
+      "displayOrder": 3,
+      "title": "A SIMPLE, REPEATABLE PROCESS THAT DELIVERS VALUE AT EVERY STEP.",
+      "chart": {
+        "kind": "circularFlow",
+        "centerLabel": "A SIMPLE, REPEATABLE PROCESS THAT DELIVERS VALUE AT EVERY STEP.",
+        "direction": "clockwise",
+        "stageCount": 5
+      },
+      "stages": [
+        {
+          "id": "plan",
+          "sequence": 1,
+          "name": "PLAN",
+          "description": "We understand the need and plan the best way to solve it.",
+          "illustrationAsset": "illustration-plan",
+          "teamIds": [
+            "product-management",
+            "marketing",
+            "assay-team",
+            "systems-engineering",
+            "regulatory-affairs",
+            "clinical-medical-affairs"
+          ]
+        },
+        {
+          "id": "build",
+          "sequence": 2,
+          "name": "BUILD",
+          "description": "We design and build the software.",
+          "illustrationAsset": "illustration-build",
+          "teamIds": [
+            "software-engineering",
+            "assay-team",
+            "systems-engineering",
+            "quality-assurance",
+            "devops"
+          ]
+        },
+        {
+          "id": "check",
+          "sequence": 3,
+          "name": "CHECK",
+          "description": "We test everything carefully to make sure it works as expected.",
+          "illustrationAsset": "illustration-check",
+          "teamIds": [
+            "quality-assurance",
+            "assay-team",
+            "regulatory-affairs",
+            "clinical-medical-affairs"
+          ]
+        },
+        {
+          "id": "confirm",
+          "sequence": 4,
+          "name": "CONFIRM",
+          "description": "We review the results with the right experts and make sure it meets all requirements.",
+          "illustrationAsset": "illustration-confirm",
+          "teamIds": [
+            "assay-team",
+            "quality-assurance",
+            "regulatory-affairs",
+            "clinical-medical-affairs",
+            "systems-engineering",
+            "product-management"
+          ]
+        },
+        {
+          "id": "deliver",
+          "sequence": 5,
+          "name": "DELIVER",
+          "description": "We safely release the software so you can use it with confidence.",
+          "illustrationAsset": "illustration-deliver",
+          "teamIds": [
+            "software-engineering",
+            "quality-assurance",
+            "regulatory-affairs",
+            "clinical-medical-affairs",
+            "customer-support",
+            "devops"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "teams-directory",
+      "type": "teamDirectory",
+      "displayOrder": 4,
+      "title": "TEAMS ACROSS ABBOTT WORKING FOR YOU",
+      "layout": {
+        "style": "sidebarList"
+      },
+      "teamIds": [
+        "product-management",
+        "marketing",
+        "systems-engineering",
+        "software-engineering",
+        "assay-team",
+        "quality-assurance",
+        "regulatory-affairs",
+        "clinical-medical-affairs",
+        "cybersecurity",
+        "devops",
+        "manufacturing-operations",
+        "customer-support"
+      ]
+    },
+    {
+      "id": "customer-benefits",
+      "type": "benefitList",
+      "displayOrder": 5,
+      "title": "WHAT DOES THIS MEAN FOR YOU?",
+      "layout": {
+        "style": "verticalIconList"
+      },
+      "items": [
+        {
+          "id": "trust",
+          "text": "You can trust our software is safe, reliable and secure.",
+          "iconAsset": "icon-shield-check",
+          "sfSymbol": "checkmark.shield.fill"
+        },
+        {
+          "id": "accuracy",
+          "text": "It helps you deliver accurate results with confidence.",
+          "iconAsset": "icon-plant",
+          "sfSymbol": "leaf.fill"
+        },
+        {
+          "id": "improvement",
+          "text": "We continuously improve to make your experience better.",
+          "iconAsset": "icon-clock",
+          "sfSymbol": "clock.fill"
+        },
+        {
+          "id": "support",
+          "text": "We are here to support you—before, during and after you go live.",
+          "iconAsset": "icon-headset",
+          "sfSymbol": "headphones"
+        },
+        {
+          "id": "shared-success",
+          "text": "Your success is our success.",
+          "iconAsset": "icon-heart",
+          "sfSymbol": "heart.fill"
+        }
+      ]
+    },
+    {
+      "id": "solutions",
+      "type": "productShowcase",
+      "displayOrder": 6,
+      "title": "OUR SOLUTIONS THAT POWER YOUR WORK",
+      "layout": {
+        "style": "horizontalProductCards"
+      },
+      "products": [
+        {
+          "id": "alinity-m-system",
+          "name": "Alinity m System",
+          "tagline": "Powerful. Flexible. Connected.",
+          "description": "Enabling high throughput and automation for molecular diagnostics.",
+          "imageAsset": "product-alinity-m-system"
+        },
+        {
+          "id": "alinity-mp",
+          "name": "Alinity mp",
+          "tagline": null,
+          "description": "An integrated end-to-end real-time PCR system delivering trusted results with walk-away convenience.",
+          "imageAsset": "product-alinity-mp"
+        },
+        {
+          "id": "m2000-system",
+          "name": "m2000 System",
+          "tagline": null,
+          "description": "Automated sample preparation system that delivers reliability, flexibility and scalability.",
+          "imageAsset": "product-m2000-system"
+        },
+        {
+          "id": "vp2000-system",
+          "name": "VP2000 System",
+          "tagline": null,
+          "description": "Sample-to-answer system that integrates PCR setup, amplification and detection in one solution.",
+          "imageAsset": "product-vp2000-system"
+        },
+        {
+          "id": "mview",
+          "name": "mView",
+          "tagline": null,
+          "description": "Data management system that delivers real-time visibility and actionable insights.",
+          "imageAsset": "product-mview",
+          "dashboardPreview": {
+            "hasCharts": true,
+            "chartTypes": ["gauge", "lineChart", "lineChart", "lineChart"],
+            "description": "Dashboard with gauges and line charts showing real-time data visibility."
+          }
+        }
+      ]
+    },
+    {
+      "id": "cybersecurity",
+      "type": "cybersecurityFooter",
+      "displayOrder": 7,
+      "title": "CYBERSECURITY: BUILT IN. NOT BOLTED ON.",
+      "statement": "Security is part of everything we do—from the first line of code to the products you use.",
+      "layout": {
+        "style": "pillarStrip"
+      },
+      "pillars": [
+        {
+          "id": "threat-modeling",
+          "title": "Threat Modeling & Risk Assessment",
+          "iconAsset": "icon-threat-modeling",
+          "sfSymbol": "magnifyingglass.circle.fill"
+        },
+        {
+          "id": "secure-coding",
+          "title": "Secure Coding Practices",
+          "iconAsset": "icon-secure-coding",
+          "sfSymbol": "chevron.left.forwardslash.chevron.right"
+        },
+        {
+          "id": "vulnerability-management",
+          "title": "Vulnerability Management",
+          "iconAsset": "icon-vulnerability-management",
+          "sfSymbol": "ladybug.fill"
+        },
+        {
+          "id": "security-testing",
+          "title": "Security Testing & Verification",
+          "iconAsset": "icon-security-testing",
+          "sfSymbol": "checkmark.shield.fill"
+        },
+        {
+          "id": "training-awareness",
+          "title": "Training & Awareness",
+          "iconAsset": "icon-training-awareness",
+          "sfSymbol": "graduationcap.fill"
+        }
+      ]
+    }
+  ],
+  "relationships": {
+    "teamParticipationByStage": {
+      "plan": ["product-management", "marketing", "assay-team", "systems-engineering", "regulatory-affairs", "clinical-medical-affairs"],
+      "build": ["software-engineering", "assay-team", "systems-engineering", "quality-assurance", "devops"],
+      "check": ["quality-assurance", "assay-team", "regulatory-affairs", "clinical-medical-affairs"],
+      "confirm": ["assay-team", "quality-assurance", "regulatory-affairs", "clinical-medical-affairs", "systems-engineering", "product-management"],
+      "deliver": ["software-engineering", "quality-assurance", "regulatory-affairs", "clinical-medical-affairs", "customer-support", "devops"]
+    },
+    "teamsNotInLifecycleWheel": ["cybersecurity", "manufacturing-operations", "marketing"],
+    "teamsInAllPostBuildStages": ["quality-assurance", "regulatory-affairs", "clinical-medical-affairs"],
+    "teamsInMostStages": {
+      "assay-team": ["plan", "build", "check", "confirm"],
+      "quality-assurance": ["build", "check", "confirm", "deliver"]
+    }
+  }
+}
